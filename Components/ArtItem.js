@@ -3,7 +3,7 @@ import { View, Text ,StyleSheet,Image} from 'react-native'
 
 const ArtItem = (props) => {
     return (
-        <View style={styles.item}>
+        <View style={[styles.item,styles.shadowProp]}>
       <Image
       style={styles.image}
       source={{
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         marginBottom: 20,
         borderColor:'lightgray',
-        borderWidth:2
+        borderWidth:.5
     },
     image:{
         width:"90%",
@@ -58,7 +58,13 @@ const styles = StyleSheet.create({
         fontSize:10,
         fontWeight:'200',
         position:'absolute'
-    }
+    },
+    shadowProp: {
+        shadowColor: '#171717',
+        shadowOffset: {width: -2, height: 4},
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
+      },
   });
 
 export default ArtItem
