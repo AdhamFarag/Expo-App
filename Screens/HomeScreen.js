@@ -37,6 +37,7 @@ const HomeScreen = () => {
             <FlatList
                 contentContainerStyle={styles.items}
                 data={ArtPieces}
+                numColumns={2}
                 keyExtractor={({ id }) => id.toString()}
                 renderItem={({ item }) => <ArtItem title={item.title}/>            }
             />
@@ -60,8 +61,8 @@ const styles = StyleSheet.create({
         alignSelf:'center'
     },
     items:{
-        flexDirection:'row',
-        flexWrap: "wrap",
+        flexDirection:'column',
+       // flexWrap: "wrap",
         justifyContent: 'center'
     },
     TextInputStyleClass:{
