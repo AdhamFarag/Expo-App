@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text ,StyleSheet,Image} from 'react-native'
 
-const ArtItem = () => {
+const ArtItem = (props) => {
     return (
         <View style={styles.item}>
       <Image
@@ -9,7 +9,7 @@ const ArtItem = () => {
       source={{
         uri: 'https://images.metmuseum.org/CRDImages/ep/original/DT1567.jpg',
       }}/>
-          <Text style={styles.itemText}>Name of Art Peice</Text>
+          <Text style={styles.itemText}>{props.title}</Text>
           <Text style={styles.Author}>Lio Divinci</Text>
 
       </View>
@@ -19,8 +19,8 @@ const ArtItem = () => {
 const styles = StyleSheet.create({
     item: {
         margin:10,
-        width:'40%',
-        height:'40%',
+        width:150,
+        height:250,
       backgroundColor: '#E8EAED',
       padding: 15,
       borderRadius: 10,
