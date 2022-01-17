@@ -1,5 +1,5 @@
 import React,{useState}from 'react'
-import {  Text,StyleSheet, TextInput, View } from 'react-native';
+import {  Text,StyleSheet, TextInput, View,ScrollView } from 'react-native';
 import ArtItem from '../Components/ArtItem';
 const HomeScreen = () => {
 
@@ -18,7 +18,9 @@ const HomeScreen = () => {
                 defaultValue={searchQuery}
                 onChangeText={searchQuery => setSearchQuery(searchQuery)} />
         </View>
+
         <View style={styles.items}>
+
             <ArtItem/>
             <ArtItem/>
             <ArtItem/>
@@ -31,6 +33,7 @@ const HomeScreen = () => {
 }
 const styles = StyleSheet.create({
     title:{
+        alignSelf:'center',
         paddingTop:30,
         fontWeight:'bold',
         fontSize:35
@@ -39,7 +42,9 @@ const styles = StyleSheet.create({
     margin: 10,
     flex:1
     },
-    InputBar:{},
+    InputBar:{
+        alignSelf:'center'
+    },
     items:{
         flexDirection:'row',
         paddingTop:60,
@@ -56,9 +61,9 @@ const styles = StyleSheet.create({
     borderColor: 'grey',
     borderRadius: 20 ,
     backgroundColor : "#FFFFFF",
-    
-    
+    },
+    scrollView:{
+        flex:1
     }
-    
     });
 export default HomeScreen

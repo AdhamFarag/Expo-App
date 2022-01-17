@@ -10,6 +10,8 @@ const ArtItem = () => {
         uri: 'https://images.metmuseum.org/CRDImages/ep/original/DT1567.jpg',
       }}/>
           <Text style={styles.itemText}>Name of Art Peice</Text>
+          <Text style={styles.Author}>Lio Divinci</Text>
+
       </View>
     )
 }
@@ -18,26 +20,34 @@ const styles = StyleSheet.create({
     item: {
         margin:10,
         width:'40%',
-      backgroundColor: '#FFF',
+        height:'40%',
+      backgroundColor: '#E8EAED',
       padding: 15,
       borderRadius: 10,
       flexDirection: 'column',
-      alignItems: 'center',
       justifyContent: 'space-between',
       marginBottom: 20,
       borderColor:'grey',
       borderWidth:2
     },
     image:{
-        width:100,
-        height:100,
+        width:"90%",
+        height:"50%",
+        alignSelf:'center',
         borderWidth:2,
         borderColor:'grey'
     },
     itemText: {
+    alignItems: 'center',
+    alignSelf:'center',
     padding:10,
-      maxWidth: '80%',
+    maxWidth: '80%',
     },
+    Author:{
+        textAlign:'right',
+        fontSize:10,
+        fontWeight:'200'
+    }
   });
 
 export default ArtItem
