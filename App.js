@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-    <View>
+    <View style={styles.Main}>
       <HomeScreen></HomeScreen>
     </View>
     </SafeAreaView>
@@ -21,4 +21,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 });
