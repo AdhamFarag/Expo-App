@@ -9,8 +9,8 @@ const ArtItem = (props) => {
       source={{
         uri: 'https://images.metmuseum.org/CRDImages/ep/original/DT1567.jpg',
       }}/>
-          <Text style={styles.itemText}>{props.title}</Text>
-          <Text style={styles.Author}>Lio Divinci</Text>
+    <Text style={styles.itemText}>{props.title}</Text>
+    <Text style={styles.Author}>Lio Divinci</Text>
 
       </View>
     )
@@ -21,14 +21,14 @@ const styles = StyleSheet.create({
         margin:10,
         width:150,
         height:250,
-      backgroundColor: '#E8EAED',
-      padding: 15,
-      borderRadius: 10,
-      flexDirection: 'column',
-      justifyContent: 'space-between',
-      marginBottom: 20,
-      borderColor:'grey',
-      borderWidth:2
+        backgroundColor: '#E8EAED',
+        padding: 15,
+        borderRadius: 10,
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        marginBottom: 20,
+        borderColor:'grey',
+        borderWidth:2
     },
     image:{
         width:"90%",
@@ -38,15 +38,25 @@ const styles = StyleSheet.create({
         borderColor:'grey'
     },
     itemText: {
-    alignItems: 'center',
-    alignSelf:'center',
-    padding:10,
-    maxWidth: '80%',
+        alignItems: 'center',
+        alignSelf:'center',
+        padding:10,
+        textAlign:'center',
+        paddingTop:140,
+        maxWidth: '100%',
+        maxHeight:'60%',
+        position:'absolute',
+    
     },
     Author:{
         textAlign:'right',
+        justifyContent:'center',
+        alignSelf:'flex-end',
+        bottom:10,
+        right:10,
         fontSize:10,
-        fontWeight:'200'
+        fontWeight:'200',
+        position:'absolute'
     }
   });
 
