@@ -1,12 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Image, SafeAreaView} from 'react-native';
+import HomeScreen from './Screens/HomeScreen';
 
 export default function App() {
+  var base64Icon = 'data:image\/gif;base64,R0lGODlhBAAFAPQAABw\/Zhg\/aBRBaBZBahRCaxxBahxEahNIchZJcR9LdB9OdiZIZSBEbShLbjxRZyBPeipRcSpReUpWaitXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAEAAUAAAURoMJIDhJAywAcAlEkxhNNTQgAOw==';
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <SafeAreaView style={styles.container}>
+    <View>
+      <HomeScreen></HomeScreen>
     </View>
+    </SafeAreaView>
   );
 }
 
