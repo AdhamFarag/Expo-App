@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'space-between',
         marginBottom: 20,
-        borderColor:'grey',
+        borderColor:'lightgray',
         borderWidth:2
     },
     image:{
@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
         height:"50%",
         alignSelf:'center',
         borderWidth:2,
-        borderColor:'grey'
+        borderColor:'grey',
+        borderRadius:5,
     },
     itemText: {
         alignItems: 'center',

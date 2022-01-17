@@ -1,7 +1,7 @@
 import React,{useState}from 'react'
 import {  Text,StyleSheet, TextInput, View,FlatList } from 'react-native';
 import ArtItem from '../Components/ArtItem';
-
+import Header from '../Components/Header';
 const HomeScreen = () => {
 
     const [searchQuery, setSearchQuery] = useState("");
@@ -21,10 +21,7 @@ const HomeScreen = () => {
     ];
     return (
         <View style={styles.MainContainer}>
-            <View>
-                <Text style={styles.title}> Welcome to Arter</Text>
-
-            </View>
+        <Header></Header>
         <View style={styles.InputBar}>
         <TextInput
                 style={styles.TextInputStyleClass}
@@ -47,12 +44,7 @@ const HomeScreen = () => {
     )
 }
 const styles = StyleSheet.create({
-    title:{
-        alignSelf:'center',
-        paddingTop:30,
-        fontWeight:'bold',
-        fontSize:35
-    },
+
     MainContainer :{
     margin: 10,
     flex:1
