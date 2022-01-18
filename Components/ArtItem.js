@@ -1,16 +1,16 @@
 import React from 'react'
 import { View, Text ,StyleSheet,Image} from 'react-native'
 
-const ArtItem = (props) => {
+const ArtItem = ({props}) => {
     return (
         <View style={[styles.item,styles.shadowProp]}>
       <Image
       style={styles.image}
       source={{
-        uri: 'https://images.metmuseum.org/CRDImages/ep/original/DT1567.jpg',
+        uri: `${props.imageProp}`,
       }}/>
     <Text style={styles.itemText}>{props.title}</Text>
-    <Text style={styles.Author}>Lio Divinci</Text>
+    <Text style={styles.Author}>{props.maker}</Text>
 
       </View>
     )
