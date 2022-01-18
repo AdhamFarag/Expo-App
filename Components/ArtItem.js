@@ -9,7 +9,7 @@ const ArtItem = ({props}) => {
       source={{
         uri: `${props.imageProp}`,
       }}/>
-    <Text style={styles.itemText}>{props.title}</Text>
+    <Text numberOfLines={3} style={styles.itemText}>{props.title}</Text>
     <Text style={styles.Author}>{props.maker}</Text>
 
       </View>
@@ -39,16 +39,10 @@ const styles = StyleSheet.create({
         borderRadius:5,
     },
     itemText: {
-        alignItems: 'center',
-        alignSelf:'center',
-        padding:10,
-        textAlign:'center',
-        paddingTop:140,
-        maxWidth: '100%',
-        maxHeight:'60%',
-        position:'absolute',
-    
+      alignItems: 'center', //Centered vertically
+      height:'80%'
     },
+
     Author:{
         textAlign:'right',
         justifyContent:'center',
@@ -57,7 +51,6 @@ const styles = StyleSheet.create({
         right:10,
         fontSize:10,
         fontWeight:'200',
-        position:'absolute'
     },
     shadowProp: {
         shadowColor: '#171717',

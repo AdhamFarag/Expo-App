@@ -6,7 +6,9 @@ const HomeScreen = () => {
 
     const [searchQuery, setSearchQuery] = useState("");
 
+    // const [art, setArt] = useState([{id:1231,title:"Gamme OF Shadows and the makers of and the lost ci owej ewoinew foiweoifiowef oiwe foew foiwe ty and there is more too cunlum",maker:"lio Davinci"}]);
     const [art, setArt] = useState([]);
+
     const getArtFromQuery = async () => {
         let response = await fetch(
           `https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=${searchQuery}`
@@ -17,6 +19,7 @@ const HomeScreen = () => {
     
 
       const getDetailsOfEach = async () => {
+          console.log('calling api');
         let arrayOfObjects = await getArtFromQuery();
         arrayOfObjects = arrayOfObjects.slice(0, 9);
         const dataToSet = []
@@ -24,8 +27,6 @@ const HomeScreen = () => {
                 console.log(i);
                 const artPiece = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${arrayOfObjects[i]}`)
                 const artPieceResult = await artPiece.json()
-                console.log(artPieceResult);
-                console.log({id:artPieceResult.objectID,title:artPieceResult.title,maker:artPieceResult.artistAlphaSort,imageProp:artPieceResult.primaryImage})
                 dataToSet.push({id:artPieceResult.objectID,title:artPieceResult.title,maker:artPieceResult.artistAlphaSort,imageProp:artPieceResult.primaryImage})
               } 
         setArt([...art, ...dataToSet]);
@@ -48,7 +49,7 @@ const HomeScreen = () => {
                 onChangeText={searchQuery => setSearchQuery(searchQuery)} />
         </View>
 
-        <View style={{paddingTop:60,}}>
+        <View style={{paddingTop:20}}>
             <FlatList
                 contentContainerStyle={styles.items}
                 data={art}
@@ -68,12 +69,13 @@ const styles = StyleSheet.create({
     flex:1
     },
     InputBar:{
-        alignSelf:'center'
+        alignSelf:'center',
+        paddingTop:20,
+        paddingBottom:0,
     },
-    items:{
+    items:{ 
         flexDirection:'column',
         alignItems:'center',
-
        // flexWrap: "wrap",
         justifyContent: 'center'
     },
