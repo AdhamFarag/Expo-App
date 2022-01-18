@@ -6,7 +6,7 @@ const HomeScreen = () => {
 
     const [searchQuery, setSearchQuery] = useState("");
 
-    // const [art, setArt] = useState([{id:1231,title:"Gamme OF Shadows and the makers of and the lost ci owej ewoinew foiweoifiowef oiwe foew foiwe ty and there is more too cunlum",maker:"lio Davinci"}]);
+    //const [art, setArt] = useState([{id:1231,title:"Gamme OF Shadows and the makers of and the lost ci owej ewoinew foiweoifiowef oiwe foew foiwe ty and there is more too cunlum",maker:"Lio divinci"}]);
     const [art, setArt] = useState([]);
 
     const getArtFromQuery = async () => {
@@ -21,17 +21,15 @@ const HomeScreen = () => {
       const getDetailsOfEach = async () => {
           console.log('calling api');
         let arrayOfObjects = await getArtFromQuery();
-        arrayOfObjects = arrayOfObjects.slice(0, 9);
+        arrayOfObjects = arrayOfObjects.slice(0, 4);
         const dataToSet = []
             for(let i=0;i<arrayOfObjects.length;i++){
                 console.log(i);
                 const artPiece = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${arrayOfObjects[i]}`)
                 const artPieceResult = await artPiece.json()
-                dataToSet.push({id:artPieceResult.objectID,title:artPieceResult.title,maker:artPieceResult.artistAlphaSort,imageProp:artPieceResult.primaryImage})
+                dataToSet.push(artPieceResult);
               } 
         setArt([...art, ...dataToSet]);
-        console.log(art)
-
 
         };
       
@@ -54,7 +52,7 @@ const HomeScreen = () => {
                 contentContainerStyle={styles.items}
                 data={art}
                 numColumns={2}
-                keyExtractor={({ id }) => id.toString()}
+                keyExtractor={({ objectID }) => objectID.toString()}
                 renderItem={({ item }) => <ArtItem props={item}/>}
             />
         </View>

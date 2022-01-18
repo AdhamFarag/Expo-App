@@ -7,10 +7,10 @@ const ArtItem = ({props}) => {
       <Image
       style={styles.image}
       source={{
-        uri: `${props.imageProp}`,
+        uri: `${props.primaryImage}`,
       }}/>
-    <Text numberOfLines={3} style={styles.itemText}>{props.title}</Text>
-    <Text style={styles.Author}>{props.maker}</Text>
+    <Text numberOfLines={3} style={styles.itemText}>{props.title || "unknown artist"}</Text>
+    <Text style={styles.Author}>{props.artistAlphaSort}</Text>
 
       </View>
     )
