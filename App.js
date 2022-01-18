@@ -8,11 +8,6 @@ export default function App() {
 
   return (
     <Navigator/>
-
-    // <SafeAreaView style={styles.container}>
-    // <View style={styles.Main}>
-    // </View>
-    // </SafeAreaView>
   );
 }
 

@@ -1,18 +1,19 @@
 import React from 'react'
-import { View, Text ,StyleSheet,Image} from 'react-native'
+import { View, Text ,StyleSheet,Image, TouchableOpacity} from 'react-native'
 
 const ArtItem = ({props}) => {
     return (
-        <View style={[styles.item,styles.shadowProp]}>
-      <Image
-      style={styles.image}
-      source={{
-        uri: `${props.primaryImage}`,
-      }}/>
-    <Text numberOfLines={3} style={styles.itemText}>{props.title || "unknown artist"}</Text>
-    <Text style={styles.Author}>{props.artistAlphaSort}</Text>
-
-      </View>
+      <TouchableOpacity>
+          <View style={[styles.item,styles.shadowProp]}>
+            <Image
+            style={styles.image}
+            source={{
+              uri: `${props.primaryImage}`,
+            }}/>
+          <Text numberOfLines={3} style={styles.itemText}>{props.title || "unknown artist"}</Text>
+          <Text style={styles.Author}>{props.artistDisplayName}</Text>
+          </View>
+      </TouchableOpacity>
     )
 }
 

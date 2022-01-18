@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation-stack'
 import { createAppContainer } from 'react-navigation'
 import HomeScreen from '../Screens/HomeScreen'
 import Collection from '../Screens/Collection'
+import DetailsOfItem from '../Screens/DetailsOfItem'
 
 const Screens ={
     HomeScreen:{
@@ -11,6 +12,9 @@ const Screens ={
     },
     Collection:{
         screen:Collection
+    },
+    DetailsOfItem:{
+        screen:DetailsOfItem
     }
 }
 
