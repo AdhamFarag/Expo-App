@@ -7,13 +7,17 @@ import Collection from '../Screens/Collection'
 
 const Screens ={
     HomeScreen:{
-        screen:HomeScreen
+        screen:HomeScreen    
     },
     Collection:{
         screen:Collection
     }
 }
 
-const HomeStack = createStackNavigator(Screens)
+const HomeStack = createStackNavigator(Screens,{
+    defaultNavigationOptions:{
+        header:null
+    }
+})
 
 export default createAppContainer(HomeStack)

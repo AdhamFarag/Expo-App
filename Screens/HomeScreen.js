@@ -54,6 +54,8 @@ const styles = StyleSheet.create({
     },
     items:{
         flexDirection:'column',
+        alignItems:'center',
+
        // flexWrap: "wrap",
         justifyContent: 'center'
     },

@@ -3,7 +3,7 @@ import { View, Text,StyleSheet ,Image} from 'react-native'
 
 const Header = () => {
     return (
-        <View >
+        <View styles={styles.heading}>
     <Image
       style={styles.image}
       source={require('../assets/Met-logo.png')}/>
@@ -13,7 +13,10 @@ const Header = () => {
     )
 }
 const styles = StyleSheet.create({
-
+    heading:{
+        paddingTop:40,
+        marginTop:10,
+    },
 title:{
     alignSelf:'center',
     paddingTop:30,
