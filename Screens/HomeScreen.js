@@ -6,8 +6,7 @@ const HomeScreen = () => {
 
     const [searchQuery, setSearchQuery] = useState("");
 
-    const [Art, setArt] = useState([
-    ]);
+    const [art, setArt] = useState([]);
     const getArtFromQuery = async () => {
         let response = await fetch(
           `https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=${searchQuery}`
@@ -15,20 +14,22 @@ const HomeScreen = () => {
         let json = await response.json();
         return json.objectIDs;
       };
+    
+
       const getDetailsOfEach = async () => {
         let arrayOfObjects = await getArtFromQuery();
         arrayOfObjects = arrayOfObjects.slice(0, 9);
+        const dataToSet = []
             for(let i=0;i<arrayOfObjects.length;i++){
-                setTimeout(() => {
                 console.log(i);
-                fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${arrayOfObjects[i]}`)
-                .then((response) => response.json())
-                .then(booksList => {
-                  setArt([...Art,{id:booksList.objectID,title:booksList.title,maker:booksList.artistAlphaSort,imageProp:booksList.primaryImage}]);
-                });
-                console.log(Art);
-            }, 3000);
+                const artPiece = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${arrayOfObjects[i]}`)
+                const artPieceResult = await artPiece.json()
+                console.log(artPieceResult);
+                console.log({id:artPieceResult.objectID,title:artPieceResult.title,maker:artPieceResult.artistAlphaSort,imageProp:artPieceResult.primaryImage})
+                dataToSet.push({id:artPieceResult.objectID,title:artPieceResult.title,maker:artPieceResult.artistAlphaSort,imageProp:artPieceResult.primaryImage})
               } 
+        setArt([...art, ...dataToSet]);
+        console.log(art)
 
 
         };
@@ -50,7 +51,7 @@ const HomeScreen = () => {
         <View style={{paddingTop:60,}}>
             <FlatList
                 contentContainerStyle={styles.items}
-                data={Art}
+                data={art}
                 numColumns={2}
                 keyExtractor={({ id }) => id.toString()}
                 renderItem={({ item }) => <ArtItem props={item}/>}
